@@ -1,12 +1,4 @@
-import {
-  Navbar,
-  Home,
-  About,
-  Teacher,
-  Contact,
-  Courses,
-  Footer,
-} from "./components/index";
+import { Navbar, Home, About, Courses, Teacher, Contact, Footer } from "./components/index";
 
 function App() {
 

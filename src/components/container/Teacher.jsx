@@ -3,7 +3,7 @@ import React from 'react'
 
 const Teacher = () => {
   return (
-    <div>Teacher</div>
+    <div className='section' id='teacher'>Teacher</div>
   )
 }
 
