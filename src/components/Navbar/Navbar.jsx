@@ -8,7 +8,7 @@ import MobileNavLinks from './MobileNavLinks';
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
   return (
-    <div className='fixed w-full top-0 left-0 z-20'>
+    <div className={`${active ? "shadow" : ""}fixed w-full top-0 left-0 z-20`}>
         <div>
             <div className='container py-4 mx-auto flex items-center justify-between px-2'>
                 <div className='flex items-center gap-4'>
