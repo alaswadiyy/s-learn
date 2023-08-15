@@ -1,25 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { navLinks } from '../../Data'
 import { HiMenuAlt1, HiX } from "react-icons/hi";
-import NavLink from './NavLink';
+// import NavLink from './NavLink';
 import MobileNavLinks from './MobileNavLinks';
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
+    const [active, setActive] = useState(null);
+    useEffect(() => {
+        const scrollActive = () => {
+        setActive(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", scrollActive);
+        return () => window.removeEventListener("scroll", scrollActive);
+    }, [active]);
   return (
-    <div className={`${active ? "shadow" : ""}fixed w-full top-0 left-0 z-20`}>
+    <div className={`${active ? "shadow bg-Solitude" : ""} fixed w-full top-0 left-0 z-20 px-10`}>
         <div>
-            <div className='container py-4 mx-auto flex items-center justify-between px-2'>
+            <div className={`${active ? "py-2 transition-all duration-300" : "py-4"}container mx-auto flex items-center justify-between px-2`}>
                 <div className='flex items-center gap-4'>
                     <HiMenuAlt1 className='text-3xl sm:hidden cursor-pointer' onClick={() => setToggle(true)}/>
                     <div className='text-xl text-teal uppercase tracking-wide font-bold'>S-Learn</div>
                 </div>
                 <div className='sm:flex items-center hidden'>
                     {/* {navLinks.map((navLink) => {
-                        return (
-                            <NavLink key={navLink.id} {...navLink}/>
-                        )
+                        return <NavLink key={navLink.id} {...navLink} />;
                     })} */}
                 </div>
                 <button className='py-3 px-6 font-bold text-sm border border-solid rounded-lg border-gray'>Sign Up</button>
