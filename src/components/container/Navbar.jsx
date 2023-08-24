@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import { navLinks } from '../../Data';
 import { HiMenuAlt1, HiX } from "react-icons/hi";
-import { Link } from 'react-scroll';
 // import NavLink from './NavLink';
 import MobileNavLinks from './MobileNavLinks';
 
@@ -26,24 +25,6 @@ const Navbar = () => {
                     <div className='text-xl text-teal uppercase tracking-wide font-bold'>S-Learn</div>
                 </div>
                 <div className='sm:flex items-center justify-between hidden'>
-                    <li className='list-none cursor-pointer mr-8'>
-                        <Link
-                            to={'/'}
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            offset={-50}
-                            className="font-bold transition-all duration-300"
-                        >
-                            
-                            <a href="home">Home</a>
-                            <a href="home" className='mx-2'>About</a>
-                            <a href="home">Courses</a>
-                            <a href="home" className='mx-2'>Teacher</a>
-                            <a href="home">Contact</a>
-                          
-                        </Link>
-                    </li>
                     {/* {navLinks.map((navLink) => {
                         return <NavLink key={navLink.id} {...navLink} />;
                     })} */}
